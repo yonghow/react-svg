@@ -17,7 +17,8 @@ interface Props {
   evalScripts?: EvalScripts
   fallback?: React.ReactType
   loading?: React.ReactType
-  renumerateIRIElements?: boolean
+  renumerateIRIElements?: boolean,
+  withCredentials?: boolean,
   src: string
   wrapper?: 'div' | 'span'
 }
@@ -85,7 +86,8 @@ export default class ReactSVG extends React.Component<
         beforeInjection,
         evalScripts,
         renumerateIRIElements,
-        src
+        src,
+        withCredentials
       } = this.props
 
       /* eslint-disable @typescript-eslint/no-non-null-assertion */
@@ -128,7 +130,8 @@ export default class ReactSVG extends React.Component<
         afterEach,
         beforeEach: beforeInjection,
         evalScripts,
-        renumerateIRIElements
+        renumerateIRIElements,
+        withCredentials
       })
     }
   }
